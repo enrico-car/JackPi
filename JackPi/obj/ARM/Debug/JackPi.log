@@ -1,0 +1,22 @@
+﻿  Cleaning remote project directory
+  Validating sources
+  Copying sources remotely to '192.168.0.108'
+  Validating architecture
+  Validating architecture
+  Starting remote build
+  Compiling sources:
+  main.cpp
+C:\Users\Utente\Documents\JackPi\JackPi\BuzzerArchive.h(126,12): warning : conversion from ‘long int’ to ‘float’ may change value [-Wconversion]
+C:\Users\Utente\Documents\JackPi\JackPi\BuzzerArchive.h(126,12): warning :   126 |  float d = length / 16.0f;
+C:\Users\Utente\Documents\JackPi\JackPi\BuzzerArchive.h(126,12): warning :       |            ^~~~~~
+C:\Users\Utente\Documents\JackPi\JackPi\BuzzerArchive.h(129,44): warning : conversion from ‘long int’ to ‘float’ may change value [-Wconversion]
+C:\Users\Utente\Documents\JackPi\JackPi\BuzzerArchive.h(129,44): warning :   129 |  long numCycles = 500000 * d / (delayValue * 2);
+C:\Users\Utente\Documents\JackPi\JackPi\BuzzerArchive.h(129,44): warning :       |                                ~~~~~~~~~~~~^~~~
+C:\Users\Utente\Documents\JackPi\JackPi\BuzzerArchive.h(129,30): warning : conversion from ‘float’ to ‘long int’ may change value [-Wfloat-conversion]
+C:\Users\Utente\Documents\JackPi\JackPi\BuzzerArchive.h(129,30): warning :   129 |  long numCycles = 500000 * d / (delayValue * 2);
+C:\Users\Utente\Documents\JackPi\JackPi\BuzzerArchive.h(129,30): warning :       |                   ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:\Users\Utente\Documents\JackPi\JackPi\main.cpp(37,21): warning : comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+C:\Users\Utente\Documents\JackPi\JackPi\main.cpp(37,21): warning :    37 |   for (int i = 0; i < sizeof(santa_melody) / sizeof(int); i++)
+C:\Users\Utente\Documents\JackPi\JackPi\main.cpp(37,21): warning :       |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Linking objects
+  JackPi.vcxproj -> C:\Users\Utente\Documents\JackPi\JackPi\bin\ARM\Debug\JackPi.out

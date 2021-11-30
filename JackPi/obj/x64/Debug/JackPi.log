@@ -1,0 +1,45 @@
+﻿  Cleaning remote project directory
+  Validating sources
+  Copying sources remotely to '192.168.0.108'
+  Validating architecture
+  Validating architecture
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Application Type\Linux\1.0\Linux.targets(202,5): warning : Current project architecture 'x64' is incompatible with the remote system architecture 'ARM' ('armv6l'). Please switch the project architecture to 'ARM' in Configuration Manager. If you are cross-compiling you can ignore this warning.
+  Starting remote build
+  Compiling sources:
+  main.cpp
+C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(126,12): warning : conversion from ‘long int’ to ‘float’ may change value [-Wconversion]
+C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(126,12): warning :   126 |  float d = length / 16.0f;
+C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(126,12): warning :       |            ^~~~~~
+C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(129,44): warning : conversion from ‘long int’ to ‘float’ may change value [-Wconversion]
+C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(129,44): warning :   129 |  long numCycles = 500000 * d / (delayValue * 2);
+C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(129,44): warning :       |                                ~~~~~~~~~~~~^~~~
+C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(129,30): warning : conversion from ‘float’ to ‘long int’ may change value [-Wfloat-conversion]
+C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(129,30): warning :   129 |  long numCycles = 500000 * d / (delayValue * 2);
+C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(129,30): warning :       |                   ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+  releHandler.cpp
+  Linking objects
+/usr/bin/ld : error : /home/pi/projects/JackPi/obj/x64/Debug/main.o: in function `buzz(int, long, long)':
+C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(123): error : undefined reference to `gpioDelay'
+/usr/bin/ld : error : /home/pi/projects/JackPi/header/BuzzerArchive.h:132: undefined reference to `gpioWrite'
+/usr/bin/ld : error : /home/pi/projects/JackPi/header/BuzzerArchive.h:133: undefined reference to `gpioDelay'
+/usr/bin/ld : error : /home/pi/projects/JackPi/header/BuzzerArchive.h:134: undefined reference to `gpioWrite'
+/usr/bin/ld : error : /home/pi/projects/JackPi/header/BuzzerArchive.h:135: undefined reference to `gpioDelay'
+/usr/bin/ld : error : /home/pi/projects/JackPi/obj/x64/Debug/main.o: in function `main':
+C:\Users\Utente\Desktop\pi\JackPi\main.cpp(22): error : undefined reference to `gpioInitialise'
+/usr/bin/ld : error : /home/pi/projects/JackPi/main.cpp:28: undefined reference to `gpioSetSignalFunc'
+/usr/bin/ld : error : /home/pi/projects/JackPi/main.cpp:29: undefined reference to `gpioSetSignalFunc'
+/usr/bin/ld : error : /home/pi/projects/JackPi/main.cpp:30: undefined reference to `gpioSetSignalFunc'
+/usr/bin/ld : error : /home/pi/projects/JackPi/main.cpp:32: undefined reference to `gpioSetMode'
+/usr/bin/ld : error : /home/pi/projects/JackPi/main.cpp:33: undefined reference to `gpioSetAlertFunc'
+/usr/bin/ld : error : /home/pi/projects/JackPi/obj/x64/Debug/main.o: in function `SignalHandler(int)':
+C:\Users\Utente\Desktop\pi\JackPi\main.cpp(57): error : undefined reference to `gpioWrite'
+/usr/bin/ld : error : /home/pi/projects/JackPi/main.cpp:58: undefined reference to `gpioWrite'
+/usr/bin/ld : error : /home/pi/projects/JackPi/main.cpp:59: undefined reference to `gpioTerminate'
+/usr/bin/ld : error : /home/pi/projects/JackPi/obj/x64/Debug/releHandler.o: in function `ReleHandler::setOnRele(int)':
+C:\Users\Utente\Desktop\pi\JackPi\src\releHandler.cpp(15): error : undefined reference to `gpioWrite'
+/usr/bin/ld : error : /home/pi/projects/JackPi/obj/x64/Debug/releHandler.o: in function `ReleHandler::delayHandler()':
+C:\Users\Utente\Desktop\pi\JackPi\src\releHandler.cpp(24): error : undefined reference to `gpioDelay'
+/usr/bin/ld : error : /home/pi/projects/JackPi/src/releHandler.cpp:26: undefined reference to `gpioWrite'
+/usr/bin/ld : error : /home/pi/projects/JackPi/obj/x64/Debug/releHandler.o: in function `std::thread::thread<void (ReleHandler::*)(), ReleHandler*, void>(void (ReleHandler::*&&)(), ReleHandler*&&)':
+/usr/include/c++/10/thread(152): error : undefined reference to `pthread_create'
+collect2 : error : ld returned 1 exit status

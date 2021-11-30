@@ -1,0 +1,1 @@
+g++ -o "/home/pi/projects/JackPi/bin/ARM64/Debug/JackPi.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -pthread -lpigpio -lrt /home/pi/projects/JackPi/obj/ARM64/Debug/main.o /home/pi/projects/JackPi/obj/ARM64/Debug/releHandler.o -lpigpio
