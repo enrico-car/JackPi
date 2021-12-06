@@ -7,15 +7,11 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v17
   Starting remote build
   Compiling sources:
   main.cpp
-C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(126,12): warning : conversion from ‘long int’ to ‘float’ may change value [-Wconversion]
-C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(126,12): warning :   126 |  float d = length / 16.0f;
-C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(126,12): warning :       |            ^~~~~~
-C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(129,44): warning : conversion from ‘long int’ to ‘float’ may change value [-Wconversion]
-C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(129,44): warning :   129 |  long numCycles = 500000 * d / (delayValue * 2);
-C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(129,44): warning :       |                                ~~~~~~~~~~~~^~~~
-C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(129,30): warning : conversion from ‘float’ to ‘long int’ may change value [-Wfloat-conversion]
-C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(129,30): warning :   129 |  long numCycles = 500000 * d / (delayValue * 2);
-C:\Users\Utente\Desktop\pi\JackPi\header\BuzzerArchive.h(129,30): warning :       |                   ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+  buzzerHandler.cpp
+C:\Users\Utente\Documents\Projects\JackPi\JackPi\src\buzzerHandler.cpp(27,20): warning : comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘unsigned int’} [-Wsign-compare]
+C:\Users\Utente\Documents\Projects\JackPi\JackPi\src\buzzerHandler.cpp(27,20): warning :    27 |  for (int i = 0; i < melody.size(); i++)
+C:\Users\Utente\Documents\Projects\JackPi\JackPi\src\buzzerHandler.cpp(27,20): warning :       |                  ~~^~~~~~~~~~~~~~~
+  micHandler.cpp
   releHandler.cpp
   Linking objects
-  JackPi.vcxproj -> C:\Users\Utente\Desktop\pi\JackPi\bin\ARM64\Debug\JackPi.out
+  JackPi.vcxproj -> C:\Users\Utente\Documents\Projects\JackPi\JackPi\bin\ARM64\Debug\JackPi.out

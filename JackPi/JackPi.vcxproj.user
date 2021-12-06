@@ -3,4 +3,7 @@
   <PropertyGroup>
     <ShowAllFiles>true</ShowAllFiles>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <RemoteTarget>1649384849;192.168.0.108 (username=, port=22, authentication=Password)</RemoteTarget>
+  </PropertyGroup>
 </Project>

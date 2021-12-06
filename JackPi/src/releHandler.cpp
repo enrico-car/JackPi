@@ -6,22 +6,25 @@ ReleHandler::ReleHandler(int _pin)
 	status = false;
 }
 
-bool ReleHandler::setOnRele(int level)
+void ReleHandler::setOnRele(int timeSec)
 {
-	if (level == 1 && status == false)
+	if (!status)
 	{
-		std::cout << "sono io" << std::endl;
 		status = true;
 		gpioWrite(pin, 0);
-		std::thread delay(&ReleHandler::delayHandler, this);
+		std::thread delay(&ReleHandler::delayHandler, this, timeSec * 1000000);
 		delay.detach();
 	}
-	return false;
 }
 
-void ReleHandler::delayHandler()
+void ReleHandler::setOnKill() {
+	gpioWrite(pin, PI_HIGH);
+}
+
+void ReleHandler::delayHandler(int time)
 {
-	gpioDelay(4000000);
+	gpioDelay(time);
+
 	status = false;
 	gpioWrite(pin, 1);
 }

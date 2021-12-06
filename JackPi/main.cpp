@@ -7,6 +7,7 @@
 #include <map>
 #include "header/BuzzerArchive.h"
 #include "header/releHandler.h"
+#include "header/buzzerHandler.h"
 
 constexpr auto RELE_PIN = 14;
 constexpr auto BUZZ_PIN = 15;
@@ -16,6 +17,7 @@ void SignalHandler(int);
 void OnPinHigh(int, int, uint32_t);
 int lastLevel = 0;
 ReleHandler rele(RELE_PIN);
+BuzzerHandler buzzer(BUZZ_PIN);
 
 int main(int argc, char* argv[])
 {
@@ -31,22 +33,9 @@ int main(int argc, char* argv[])
 
 	gpioSetMode(MIC_PIN, PI_INPUT);
 	gpioSetAlertFunc(MIC_PIN, OnPinHigh);
+
 	while (true)
 	{
-		//for (int i = 0; i < sizeof(santa_melody) / sizeof(int); i++)
-		//{
-		//	// to calculate the note duration, take one second
-		//	// divided by the note type.
-		//	//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
-		//	int noteDuration = santa_tempo[i];
-
-		//	buzz(BUZZ_PIN, santa_melody[i], noteDuration);
-
-		//	// to distinguish the notes, set a minimum time between them.
-		//	// the note's duration + 30% seems to work well:
-		//	int pauseBetweenNotes = (int)(noteDuration * 1.30);
-		//	gpioDelay(pauseBetweenNotes);
-		//}
 	}
 
 	return EXIT_SUCCESS;
@@ -54,13 +43,15 @@ int main(int argc, char* argv[])
 
 void SignalHandler(int)
 {
-	gpioWrite(RELE_PIN, PI_HIGH);
-	gpioWrite(BUZZ_PIN, PI_LOW);
+	//gpioWrite(BUZZ_PIN, PI_LOW);
+	rele.setOnKill();
+	buzzer.setOnKill();
 	gpioTerminate();
 	exit(EXIT_SUCCESS);
 }
 
 void OnPinHigh(int pin, int level, uint32_t tick)
 {
-	rele.setOnRele(level);
+	rele.setOnRele(10);
+	buzzer.setOnBuzzer(megalovania_melody, megalovania_tempo, 140);
 }

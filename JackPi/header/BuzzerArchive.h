@@ -1,7 +1,9 @@
 #pragma once
 
 #include <pigpio.h>
+#include <vector>
 
+#define P   0
 #define B0  31
 #define C1  33
 #define CS1 35
@@ -92,7 +94,7 @@
 #define D8  4699
 #define DS8 4978
 
-int santa_melody[] =
+/*int santa_melody[] =
 {
   G4,
   E4, F4, G4, G4, G4,
@@ -114,24 +116,20 @@ int santa_tempo[] =
   4, 4, 4, 4,
   4, 2, 4,
   1
+};*/
+
+std::vector<int> megalovania_melody =
+{
+	D4, D4, D5, A4, P, GS4, P, G4, P, F4, D4, F4, G4,
+	C4, C4, D5, A4, P, GS4, P, G4, P, F4, D4, F4, G4,
+	B3, B3, D5, A4, P, GS4, P, G4, P, F4, D4, F4, G4,
+	AS3, AS3, D5, A4, P, GS4, P, G4, P, F4, D4, F4, G4
 };
 
-void buzz(int targetPin, long frequency, long length)
+std::vector<int> megalovania_tempo =
 {
-	if (frequency <= 0)
-	{
-		gpioDelay(length);
-		return;
-	}
-	float d = length / 16.0f;
-	long delayValue = 1000000 / frequency / 2;
-
-	long numCycles = 500000 * d / (delayValue * 2);
-
-	for (long i = 0; i < numCycles; i++) { // for the calculated length of time...
-		gpioWrite(targetPin, PI_HIGH); // write the buzzer pin high to push out the diaphram
-		gpioDelay(delayValue); // wait for the calculated delay value
-		gpioWrite(targetPin, PI_LOW); // write the buzzer pin low to pull back the diaphram
-		gpioDelay(delayValue); // wait again or the calculated delay value
-	}
-}
+	1, 1, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1,
+	1, 1, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1,
+	1, 1, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1,
+	1, 1, 2, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1
+};

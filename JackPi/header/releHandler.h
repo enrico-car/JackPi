@@ -9,8 +9,10 @@ class ReleHandler {
 	int pin;
 	bool status;
 
+	void delayHandler(int time);
+
 	public:
 	ReleHandler(int _pin);
-	bool setOnRele(int level);
-	void delayHandler();
+	void setOnRele(int timeSec);
+	void setOnKill();
 };

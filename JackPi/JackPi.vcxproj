@@ -76,10 +76,14 @@
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\buzzerHandler.cpp" />
+    <ClCompile Include="src\micHandler.cpp" />
     <ClCompile Include="src\releHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\BuzzerArchive.h" />
+    <ClInclude Include="header\buzzerHandler.h" />
+    <ClInclude Include="header\micHandler.h" />
     <ClInclude Include="header\releHandler.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
